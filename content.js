@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log("--- DysLeap Extension Loaded ---");
+    console.log("--- HelpLexia Extension Loaded ---");
     chrome.storage.sync.get(null, (items) => {
       var styles = `
           @font-face {

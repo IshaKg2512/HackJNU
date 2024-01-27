@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "DysHelp",
+    "name": "HelpLexia",
     "description": "Making web accessible for people with Dyslexia",
     "version": "1.0",
     "action": {

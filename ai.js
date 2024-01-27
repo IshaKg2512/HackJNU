@@ -3,7 +3,7 @@ const openAiKey = "ENTER YOUR OPEN API KEY"
 async function OpenAIFetchAPI(prompt) {
   console.log("Connecting to Open AI...");
   var chatUrl = "https://api.openai.com/v1/chat/completions";
-  var bearer = "Bearer " ${openAiKey};
+  var bearer =`Bearer ${openAiKey}`;
   try {
     const response = await fetch(chatUrl, {
       method: "POST",
@@ -37,7 +37,7 @@ async function OpenAIFetchAPI(prompt) {
 function DallEFetchAPI(prompt) {
   console.log("Connecting to OpenAi Dall-E");
   var dalleUrl = "https://api.openai.com/v1/images/generations";
-  var bearer = "Bearer " ${openAiKey};
+  var bearer = `Bearer ${openAiKey}`;
   fetch(dalleUrl, {
     method: "POST",
     headers: {

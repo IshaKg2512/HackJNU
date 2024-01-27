@@ -1,12 +1,30 @@
 const openAiKey = "ENTER YOUR OPEN AI API"
 
-chrome.contextMenus.removeAll(function () {
-  chrome.contextMenus.create({
-    id: "dysleap",
-    title: "Dysleap",
-    contexts: ["selection"],
+  // Context Menu Creation
+  chrome.contextMenus.removeAll(function () {
+    chrome.contextMenus.create({
+      title: "Summarize Text",
+      id: "Summarize",
+      contexts: ["selection"],
+    });
+    chrome.contextMenus.create({
+      title: "Generate AI Image",
+      id: "Generate",
+      contexts: ["selection"],
+    });
+    chrome.contextMenus.create({
+      title: "Read Text",
+      id: "Read",
+      contexts: ["selection"],
+    });
+    chrome.contextMenus.create({
+      title: "Highlight b's and d's & 6's and 9's",
+      id: "Read",
+      contexts: ["selection"],
+    });
+
   });
-});
+
 
 chrome.storage.sync.get(null, (items) => {
   var keys = Object.keys(items);
@@ -31,7 +49,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.action === "fetchGPT") {
     console.log("Connecting to Open AI Chat Gpt 4");
     var chatUrl = "https://api.openai.com/v1/chat/completions";
-    var bearer = "Bearer " ${openAiKey};
+    var bearer = `Bearer ${openAiKey}`;
     fetch(chatUrl, {
       method: "POST",
       headers: {
@@ -67,7 +85,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   } else if (request.action === "genImage") {
     console.log("Connecting to OpenAi Dalle");
     var dalleUrl = "https://api.openai.com/v1/images/generations";
-    var bearer = "Bearer " ${openAiKey};
+    var bearer = `Bearer ${openAiKey}`;
     fetch(dalleUrl, {
       method: "POST",
       headers: {

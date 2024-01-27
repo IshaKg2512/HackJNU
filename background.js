@@ -1,12 +1,29 @@
-const openAiKey = "ENTER YOUR OPEN AI API"
+// background.js
+
+chrome.runtime.onInstalled.addListener(function () {
+  console.log("OpenAI Summarizer Extension installed.");
+
+  // Set up a context menu item
+  chrome.contextMenus.removeAll(function () {
+  chrome.contextMenus.create({
+    title: "Summarize Text",
+    contexts: ["selection"],
+    id: "summarizeContextMenu"
+  });
+
+  // Set up a listener for context menu item clicks
+  chrome.contextMenus.onClicked.addListener(function (info, tab) {
+    if (info.menuItemId === "summarizeContextMenu") {
+      // Send a message to the content script to summarize the selected text
+      chrome.tabs.sendMessage(tab.id, { action: "summarizeTextContextMenu", selectedText: info.selectionText });
+    }
+  });
+});
+
+
+
 
   // Context Menu Creation
-  chrome.contextMenus.removeAll(function () {
-    chrome.contextMenus.create({
-      title: "Summarize Text",
-      id: "Summarize",
-      contexts: ["selection"],
-    });
     chrome.contextMenus.create({
       title: "Generate AI Image",
       id: "Generate",

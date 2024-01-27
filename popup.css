@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "font-bold";
+  src: url("fonts/bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "font-regular";
+  src: url("fonts/regular.woff") format("woff");
+}
+
+body {
+  font-family: "font-regular", sans-serif;
+  padding: 5px;
+  text-align: start;
+  border-radius: 50%;
+  background-color: ##b00c0c;
+}
+
+.title123 {
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.refresh {
+  text-align: center;
+  color: rgb(184, 0, 0);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.setting-text {
+  flex: 1;
+  text-align: left;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #f76bb9;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #f76bb9;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+}

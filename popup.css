@@ -13,7 +13,9 @@ body {
   padding: 5px;
   text-align: start;
   border-radius: 50%;
-  background-color: #b00c0c;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
 }
 
 .highlight{

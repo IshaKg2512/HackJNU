@@ -44,14 +44,16 @@ chrome.runtime.onMessage.addListener(async function (request, sender, sendRespon
 // Summarization code ends here
 
 $(document).ready(function () {
-  console.log("--- HelpLexia Extension Loaded ---");
-  chrome.storage.sync.get(null, (items) => {
+    console.log("--- HelpLexia Extension Loaded ---");
+    chrome.storage.sync.get(null, (items) => {
       var styles = `
           @font-face {
-              font-family: 'font-regular';
-              src: url('${chrome.runtime.getURL("fonts/regular.woff")}') format('woff');
+            font-family: 'font-regular';
+            src: url('${chrome.runtime.getURL(
+              "fonts/regular.woff"
+            )}') format('woff');
           }
-
+  
           .text-dialog {
               position: absolute;
               background-color: #333;
@@ -61,17 +63,15 @@ $(document).ready(function () {
               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
               z-index: 9999;
               max-width: 500px;
-          }
-
-          // Append style to the head of the current document
-          $("head").append("<style>" + styles + "</style>");
-
-          if (items?.font) {
-              $("body").attr(
-                  "style",
-                  "font-family: 'font-regular', sans-serif !important;"
-              );
-          }
-      `;
-  });
-});
+            }
+        `;
+  
+      // Append style to the head of the current document
+      $("head").append("<style>" + styles + "</style>");
+      if (items?.font) {
+        $("body").attr(
+          "style",
+          "font-family: 'font-regular', sans-serif !important;"
+        );
+      }
+  

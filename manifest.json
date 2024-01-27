@@ -25,7 +25,7 @@
     ],
     "web_accessible_resources": [
       {
-        "resources": ["fonts/regular.woff", "fonts/bold.woff", "uiScript.js"],
+        "resources": ["fonts/regular.woff", "fonts/bold.woff", "script.js"],
         "matches": ["<all_urls>"]
       }
     ],

@@ -30,13 +30,6 @@ body {
   letter-spacing: 5px;
 }
 
-.refresh {
-  text-align: center;
-  color: rgb(184, 0, 0);
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-
 .settings-row {
   display: flex;
   align-items: center;
@@ -89,11 +82,11 @@ body {
 }
 
 input:checked + .slider {
-  background-color: #f76bb9;
+  background-color: #0256fe;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #f76bb9;
+  box-shadow: 0 0 1px #0256fe;
 }
 
 input:checked + .slider:before {

@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "DysLeap",
+  "description": "Making web accessible for people with Dyslexia",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "contentSettings",
+    "debugger",
+    "contextMenus"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery.min.js", "content.js"],
+      "css": ["popup.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["fonts/regular.woff", "fonts/bold.woff", "uiScript.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "background": {
+    "type": "module",
+    "service_worker": "background.js"
+  }
+}

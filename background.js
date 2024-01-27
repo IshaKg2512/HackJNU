@@ -1,4 +1,4 @@
-// background.js
+// background.js for summarizer
 
 chrome.runtime.onInstalled.addListener(function () {
   console.log("OpenAI Summarizer Extension installed.");
@@ -19,9 +19,6 @@ chrome.runtime.onInstalled.addListener(function () {
     }
   });
 });
-
-
-
 
   // Context Menu Creation
     chrome.contextMenus.create({

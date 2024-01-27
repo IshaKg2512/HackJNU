@@ -1,4 +1,4 @@
-const openAiKey = "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"
+const openAiKey = "ENTER YOUR OPEN AI API"
 
 chrome.contextMenus.removeAll(function () {
   chrome.contextMenus.create({

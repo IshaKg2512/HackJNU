@@ -13,7 +13,14 @@ body {
   padding: 5px;
   text-align: start;
   border-radius: 50%;
-  background-color: ##b00c0c;
+  background-color: #b00c0c;
+}
+
+.highlight{
+  display: inline-block;
+  padding: .25em 0;
+  background: #FFC107;
+  color: #ffffff;
 }
 
 .title123 {

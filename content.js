@@ -74,4 +74,20 @@ $(document).ready(function () {
           "font-family: 'font-regular', sans-serif !important;"
         );
       }
+      chrome.storage.sync.onChanged.addListener(function (item) {
+        // Used to connect settings changes with page
+      });
+    });
+  });
+  
+  chrome.runtime.onMessage.addListener(async function (
+    request,
+    sender,
+    sendResponse
+  ) {
+    console.log(request);
+    if (request.action === "helplexia") {
+      await helplexia();
+    }
+  });
   
